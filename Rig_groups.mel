@@ -1,0 +1,131 @@
+// Script Name : Rig_groups.mel
+// Version : 1.0
+// Date: 5.7.2013
+// Author : sabarishwar
+// Blog: http://lrsabari.blogspot.in/
+// E-mail : lrsabari@gmail.com
+//
+// Description: 
+//   Quickly create groups for Rigging Purpose.
+//
+// Install:
+//   Copy the "Rig_groups.mel" to your local user/ Maya scriptsdirectory ( MyDocuments\maya\version\scripts\)
+//   Then just source the script in the script editor and save it in Shelf. 
+//
+//   Copyright (C) 2012 sabarishwar. All rights reserved.
+//  -----------------------------------------------------------------------------
+
+// create an empty group node with name
+group -em -name CharacterNode;
+group -em -name GlobalTranslate;
+group -em -name GlobalScale;
+group -em -name Joints;
+group -em -name Ik;
+group -em -name ContolObjects;
+group -em -name Model;
+group -em -name Blendshape;
+group -em -name Extra;
+
+// create an parent groups
+parent Joints GlobalScale;
+parent Ik GlobalScale ;
+parent ContolObjects GlobalScale ;
+parent GlobalScale GlobalTranslate;
+parent GlobalTranslate CharacterNode;
+parent Model CharacterNode;
+parent Blendshape CharacterNode;
+parent Extra CharacterNode;
+
+// create Lock and Hide Attributes 
+
+//For Global Translate
+setAttr -lock true -keyable false -channelBox false "GlobalTranslate.sx";
+setAttr -lock true -keyable false -channelBox false "GlobalTranslate.sy";
+setAttr -lock true -keyable false -channelBox false "GlobalTranslate.sz";
+setAttr -lock true -keyable false -channelBox false "GlobalTranslate.v";
+
+// For Global Scale
+setAttr -lock true -keyable false -channelBox false "GlobalScale.tx";
+setAttr -lock true -keyable false -channelBox false "GlobalScale.ty";
+setAttr -lock true -keyable false -channelBox false "GlobalScale.tz";
+setAttr -lock true -keyable false -channelBox false "GlobalScale.rx";
+setAttr -lock true -keyable false -channelBox false "GlobalScale.ry";
+setAttr -lock true -keyable false -channelBox false "GlobalScale.rz";
+setAttr -lock true -keyable false -channelBox false "GlobalScale.v";
+
+// For Model
+setAttr -lock true -keyable false -channelBox false "Model.tx";
+setAttr -lock true -keyable false -channelBox false "Model.ty";
+setAttr -lock true -keyable false -channelBox false "Model.tz";
+setAttr -lock true -keyable false -channelBox false "Model.rx";
+setAttr -lock true -keyable false -channelBox false "Model.ry";
+setAttr -lock true -keyable false -channelBox false "Model.rz";
+setAttr -lock true -keyable false -channelBox false "Model.sx";
+setAttr -lock true -keyable false -channelBox false "Model.sy";
+setAttr -lock true -keyable false -channelBox false "Model.sz";
+
+// For Blendshape
+setAttr -lock true -keyable false -channelBox false "Blendshape.tx";
+setAttr -lock true -keyable false -channelBox false "Blendshape.ty";
+setAttr -lock true -keyable false -channelBox false "Blendshape.tz";
+setAttr -lock true -keyable false -channelBox false "Blendshape.rx";
+setAttr -lock true -keyable false -channelBox false "Blendshape.ry";
+setAttr -lock true -keyable false -channelBox false "Blendshape.rz";
+setAttr -lock true -keyable false -channelBox false "Blendshape.sx";
+setAttr -lock true -keyable false -channelBox false "Blendshape.sy";
+setAttr -lock true -keyable false -channelBox false "Blendshape.sz";
+
+// For Extra
+setAttr -lock true -keyable false -channelBox false "Extra.tx";
+setAttr -lock true -keyable false -channelBox false "Extra.ty";
+setAttr -lock true -keyable false -channelBox false "Extra.tz";
+setAttr -lock true -keyable false -channelBox false "Extra.rx";
+setAttr -lock true -keyable false -channelBox false "Extra.ry";
+setAttr -lock true -keyable false -channelBox false "Extra.rz";
+setAttr -lock true -keyable false -channelBox false "Extra.sx";
+setAttr -lock true -keyable false -channelBox false "Extra.sy";
+setAttr -lock true -keyable false -channelBox false "Extra.sz";
+
+// For Joints
+setAttr -lock true -keyable false -channelBox false "Joints.tx";
+setAttr -lock true -keyable false -channelBox false "Joints.ty";
+setAttr -lock true -keyable false -channelBox false "Joints.tz";
+setAttr -lock true -keyable false -channelBox false "Joints.rx";
+setAttr -lock true -keyable false -channelBox false "Joints.ry";
+setAttr -lock true -keyable false -channelBox false "Joints.rz";
+setAttr -lock true -keyable false -channelBox false "Joints.sx";
+setAttr -lock true -keyable false -channelBox false "Joints.sy";
+setAttr -lock true -keyable false -channelBox false "Joints.sz";
+
+// For Ik
+setAttr -lock true -keyable false -channelBox false "Ik.tx";
+setAttr -lock true -keyable false -channelBox false "Ik.ty";
+setAttr -lock true -keyable false -channelBox false "Ik.tz";
+setAttr -lock true -keyable false -channelBox false "Ik.rx";
+setAttr -lock true -keyable false -channelBox false "Ik.ry";
+setAttr -lock true -keyable false -channelBox false "Ik.rz";
+setAttr -lock true -keyable false -channelBox false "Ik.sx";
+setAttr -lock true -keyable false -channelBox false "Ik.sy";
+setAttr -lock true -keyable false -channelBox false "Ik.sz";
+
+// For ControlObjects
+setAttr -lock true -keyable false -channelBox false "ContolObjects.tx";
+setAttr -lock true -keyable false -channelBox false "ContolObjects.ty";
+setAttr -lock true -keyable false -channelBox false "ContolObjects.tz";
+setAttr -lock true -keyable false -channelBox false "ContolObjects.rx";
+setAttr -lock true -keyable false -channelBox false "ContolObjects.ry";
+setAttr -lock true -keyable false -channelBox false "ContolObjects.rz";
+setAttr -lock true -keyable false -channelBox false "ContolObjects.sx";
+setAttr -lock true -keyable false -channelBox false "ContolObjects.sy";
+setAttr -lock true -keyable false -channelBox false "ContolObjects.sz";
+
+// For CharacterNode
+setAttr -lock true -keyable false -channelBox false "CharacterNode.tx";
+setAttr -lock true -keyable false -channelBox false "CharacterNode.ty";
+setAttr -lock true -keyable false -channelBox false "CharacterNode.tz";
+setAttr -lock true -keyable false -channelBox false "CharacterNode.rx";
+setAttr -lock true -keyable false -channelBox false "CharacterNode.ry";
+setAttr -lock true -keyable false -channelBox false "CharacterNode.rz";
+setAttr -lock true -keyable false -channelBox false "CharacterNode.sx";
+setAttr -lock true -keyable false -channelBox false "CharacterNode.sy";
+setAttr -lock true -keyable false -channelBox false "CharacterNode.sz";
