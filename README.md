@@ -1,4 +1,4 @@
-Author: Sabarishwar L.R 
+Author: Sabarishwar
 E-Mail: sabrishwar@gmail.com
 
 Blog - http://sabareeshwar.blogspot.in/
